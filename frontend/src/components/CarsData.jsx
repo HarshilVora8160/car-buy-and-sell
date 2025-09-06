@@ -1,5 +1,4 @@
 import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
 import { IoCarSharp } from "react-icons/io5";
 import { BsFillFuelPumpDieselFill } from "react-icons/bs";
 import { SiTransmission } from "react-icons/si";
@@ -8,20 +7,9 @@ import { IoMdTime } from "react-icons/io";
 import { FaRegPenToSquare } from "react-icons/fa6";
 import CarSlider from './CarSlider';
 import TrendingCars from './TrendingCars';
-import { useState } from 'react';
-import { FaAngleRight } from "react-icons/fa6";
-
+import CarsByBudget from './child-components/CarsbyBudget';
 
 const CarData = () => {
-
-    const [carBudget, setCarBudget] = useState('')
-
-    const carBudgetData = [
-        { imagePath: "https://imgd.aeplcdn.com/664x374/n/cw/ec/121943/verna-exterior-right-front-three-quarter-102.jpeg?isig=0&q=80", carTitle: "Tata Nexon", price: "Rs.8.00 - 15.60 Lakh", breakup: "View Price Breakup" },
-        { imagePath: "https://imgd.aeplcdn.com/664x374/n/cw/ec/121943/verna-exterior-right-front-three-quarter-102.jpeg?isig=0&q=80", carTitle: "Tata Nexon", price: "Rs.8.00 - 15.60 Lakh", breakup: "View Price Breakup" },
-        { imagePath: "https://imgd.aeplcdn.com/664x374/n/cw/ec/121943/verna-exterior-right-front-three-quarter-102.jpeg?isig=0&q=80", carTitle: "Tata Nexon", price: "Rs.8.00 - 15.60 Lakh", breakup: "View Price Breakup" },
-        { imagePath: "https://imgd.aeplcdn.com/664x374/n/cw/ec/121943/verna-exterior-right-front-three-quarter-102.jpeg?isig=0&q=80", carTitle: "Tata Nexon", price: "Rs.8.00 - 15.60 Lakh", breakup: "View Price Breakup" },
-    ]
 
     return (
         <div className="relative">
@@ -95,7 +83,7 @@ const CarData = () => {
             </div>
 
             <div className='my-4 flex justify-center'>
-                <div className='w-[50vw] bg-gray-50 p-3 rounded-2xl' >
+                <div className='w-[60vw] bg-gray-50 p-3 rounded-2xl' >
                     <div className='flex items-center gap-1 mb-2' >
                         <IoMdTime size={20} />
                         <span>Recently Viewed</span>
@@ -131,8 +119,9 @@ const CarData = () => {
                 </div>
             </div>
 
+            {/* Trending Cars component */}
             <div className='flex justify-center' >
-                <div className='w-1/2 bg-gray-100 p-3 rounded-2xl' >
+                <div className='w-[60vw] bg-gray-100 p-3 rounded-2xl' >
                     <div className='flex gap-2 mb-2' >
                         <i className="bi bi-graph-up-arrow"></i>
                         <span>Trending Cars</span>
@@ -141,93 +130,12 @@ const CarData = () => {
                 </div>
             </div>
 
-            <div>
-                <div className='flex justify-center w-55/100 my-3' >
-                    <h3>Cars by Budget</h3>
-                </div>
-
-                <div className='flex justify-center' >
-                    <div className='flex w-55/100 list-none gap-4 text-xl' >
-                        <div>
-                            <li onClick={() => setCarBudget('')} >Cars Under 10 Lakh</li>
-                            {carBudget === "" ? <div className='p-[2px] bg-green-500' ></div> : ""}
-                        </div>
-                        <div>
-                            <li onClick={() => setCarBudget('10-20 Lakh')} >10-20 Lakh</li>
-                            {carBudget === "10-20 Lakh" ? <div className='p-[2px] bg-green-500' ></div> : ""}
-                        </div>
-                        <div>
-                            <li onClick={() => setCarBudget('20-30 Lakh')} >20-30 Lakh</li>
-                            {carBudget === "20-30 Lakh" ? <div className='p-[2px] bg-green-500' ></div> : ""}
-                        </div>
-                        <div>
-                            <li onClick={() => setCarBudget('Luxury Cars')} >Luxury Cars</li>
-                            {carBudget === "Luxury Cars" ? <div className='p-[2px] bg-green-500' ></div> : ""}
-                        </div>
-                    </div>
-                </div>
-
-                <div className='flex justify-center' >
-                    <div className='p-[0.5px] bg-gray-500 w-55/100' ></div>
-                </div>
-
-                <div className='my-2 flex justify-center' >
-                    <div className='w-55/100' >
-                        <div className='grid grid-cols-12 gap-3' >
-                            {
-                                carBudgetData?.map((ele, idx) => {
-                                    return (
-
-                                        <div className='col-span-3 rounded-2xl p-2 border' >
-                                            <img src={ele.imagePath} className='rounded-xl' />
-                                            <div className='mx-2' >
-                                                <h4>{ele.carTitle}</h4>
-                                                <span>{ele.price}</span>
-                                                <div>{ele.breakup}</div>
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                    </div>
-                </div>
-
-                <div className='flex mt-2 justify-center' >
-                    <div className='w-55/100' >
-                        <span className='flex text-sm mb-2' >Showing Avg. Ex-Showroom Price, <span className='flex items-center gap-1 underline' > Select City <FaRegPenToSquare /></span></span>
-                        <span className='flex items-center gap-1' >All Cars Under 10 Lakh <FaAngleRight /></span>
-                    </div>
-                </div>
-
-                <div className='my-5 flex justify-center' >
-                    <div className='w-55/100' >
-                        <h4 className='mb-3' >Get Offers on Popular Cars</h4>
-                        <div className='grid grid-cols-12 gap-3' >
-                            {
-                                carBudgetData?.map((ele, idx) => {
-                                    return (
-
-                                        <div className='col-span-3 rounded-2xl p-2 border' >
-                                            <img src={ele.imagePath} className='rounded-xl' />
-                                            <div className='mx-2' >
-                                                <h4>{ele.carTitle}</h4>
-                                                <span>{ele.price}</span>
-                                                <div>{ele.breakup}</div>
-                                            </div>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            {/* Cars by Budget component */}
+            <CarsByBudget />
 
             <div className='flex justify-center' >
                 <div className='w-55/100' >
-                    <h1 className='mb-3' >All Brands</h1>  
+                    <h1 className='mb-3' >All Brands</h1>
                     <div className='grid grid-cols-12 rounded-2xl' >
                         <div className='col-span-2 flex justify-center items-center border border-black rounded-tl-2xl ' >
                             <div className='p-3'>
@@ -314,7 +222,7 @@ const CarData = () => {
                         </div>
 
                     </div>
-                    
+
                 </div>
             </div>
 
