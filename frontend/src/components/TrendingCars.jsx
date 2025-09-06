@@ -40,7 +40,7 @@ const TrendingCars = () => {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />,
@@ -57,18 +57,6 @@ const TrendingCars = () => {
                     slidesToShow:1
                 }
             },
-            {
-                breakpoint: 1536,
-                settings:{
-                    slidesToShow:3
-                }
-            },
-            {
-                breakpoint: 2048,
-                settings:{
-                    slidesToShow:5
-                }
-            }
         ]
     };
 

@@ -34,7 +34,7 @@ const CarData = () => {
             </div>
 
             <div className="flex justify-center ">
-                <div className="bg-white shadow-md rounded-xl p-6 px-10 w-[50vw]">
+                <div className="bg-white shadow-md rounded-xl p-6 px-10 w-[60vw]">
                     <div className="flex items-center justify-between mb-4" >
                         <span className="text-2xl font-semibold">Find Your Right Car</span>
                         <button className="text-gray-600 font-semibold underline gap-1 flex">Select City<i className="bi bi-geo-alt"></i></button>
@@ -50,7 +50,7 @@ const CarData = () => {
                             <input
                                 type="text"
                                 placeholder="Type to select car name, e.g. Citroen C3"
-                                className="px-2 w-[500px]"
+                                className="px-2 w-[400px]"
                             />
                         </div>
                         <div className="flex justify-end px-2" >
@@ -134,7 +134,7 @@ const CarData = () => {
             <div className='flex justify-center' >
                 <div className='w-1/2 bg-gray-100 p-3 rounded-2xl' >
                     <div className='flex gap-2 mb-2' >
-                        <i class="bi bi-graph-up-arrow"></i>
+                        <i className="bi bi-graph-up-arrow"></i>
                         <span>Trending Cars</span>
                     </div>
                     <TrendingCars />
