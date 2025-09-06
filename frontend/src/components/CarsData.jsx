@@ -64,31 +64,31 @@ const CarData = () => {
                                 <PaymentsOutlinedIcon sx={{ fontSize: 20 }} />
 
                             </div>
-                            <span className='px-3' >Budget</span>
+                            <span className='px-2' >Budget</span>
                         </div>
                         <div className='flex items-center rounded-md border border-gray-500' >
                             <div className='bg-teal-100 p-2 h-full items-center rounded-l-md border-gray-500' >
                                 <IoCarSharp size={20} />
                             </div>
-                            <span className='px-3' >Body Type</span>
+                            <span className='px-2' >Body Type</span>
                         </div>
                         <div className='flex items-center rounded-md border border-gray-500' >
                             <div className='bg-teal-100 p-2 items-center h-full rounded-l-md border-gray-500' >
                                 <BsFillFuelPumpDieselFill size={20} />
                             </div>
-                            <span className='px-3' >Fuel Type</span>
+                            <span className='px-2' >Fuel Type</span>
                         </div>
                         <div className='flex items-center rounded-md border border-gray-500' >
                             <div className='bg-teal-100 h-full p-2 items-center rounded-l-md border-gray-500' >
                                 <SiTransmission size={18} />
                             </div>
-                            <span className='px-3' >Transmission</span>
+                            <span className='px-2' >Transmission</span>
                         </div>
                         <div className='flex items-center rounded-md border border-gray-500' >
                             <div className='bg-teal-100 p-2 h-full items-center rounded-l-md border-gray-500' >
                                 <CiFilter size={20} />
                             </div>
-                            <span className='px-3' >All Filters</span>
+                            <span className='px-2' >All Filters</span>
                         </div>
                     </div>
                 </div>
