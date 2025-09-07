@@ -11,8 +11,16 @@ import CarsByBudget from './child-components/CarsbyBudget';
 import CarsLogo from './child-components/CarsLogo';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
 import TimeToLeaveOutlinedIcon from '@mui/icons-material/TimeToLeaveOutlined';
+import { FaAngleRight } from "react-icons/fa6";
 
 const CarData = () => {
+
+    const carBudgetData = [
+        { imagePath: "https://imgd.aeplcdn.com/664x374/n/cw/ec/121943/verna-exterior-right-front-three-quarter-102.jpeg?isig=0&q=80", carTitle: "Tata Nexon", price: "Rs.8.00 - 15.60 Lakh", breakup: "View Price Breakup" },
+        { imagePath: "https://imgd.aeplcdn.com/664x374/n/cw/ec/121943/verna-exterior-right-front-three-quarter-102.jpeg?isig=0&q=80", carTitle: "Tata Nexon", price: "Rs.8.00 - 15.60 Lakh", breakup: "View Price Breakup" },
+        { imagePath: "https://imgd.aeplcdn.com/664x374/n/cw/ec/121943/verna-exterior-right-front-three-quarter-102.jpeg?isig=0&q=80", carTitle: "Tata Nexon", price: "Rs.8.00 - 15.60 Lakh", breakup: "View Price Breakup" },
+        { imagePath: "https://imgd.aeplcdn.com/664x374/n/cw/ec/121943/verna-exterior-right-front-three-quarter-102.jpeg?isig=0&q=80", carTitle: "Tata Nexon", price: "Rs.8.00 - 15.60 Lakh", breakup: "View Price Breakup" },
+    ]
 
     return (
         <div className="">
@@ -134,13 +142,38 @@ const CarData = () => {
             </div>
 
             {/* Cars by Budget component */}
-            <CarsByBudget />
+            <CarsByBudget title={"Cars by Budget"} />
+            <div className='my-5 flex justify-center' >
+                <div className='w-70/100' >
+                    <h4 className='mb-3' >Get Offers on Popular Cars</h4>
+                    <div className='grid grid-cols-12 gap-3' >
+                        {
+                            carBudgetData?.map((ele, idx) => {
+                                return (
+
+                                    <div className='col-span-3 rounded-2xl p-1 py-2 border' >
+                                        <img src={ele.imagePath} className='rounded-xl' />
+                                        <div className='mx-2' >
+                                            <div>
+                                                <span className='text-[18px]' >{ele.carTitle}</span>
+                                            </div>
+                                            <span>{ele.price}</span>
+                                            <div className='text-blue-600 mt-2 text-[14px]' >{ele.breakup}</div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+            </div>
+            {/* Cars by Budget component end */}
 
             {/* Cars logo component */}
             <CarsLogo />
 
             {/* Find The Cars Of Your Choice Component */}
-            <div className='flex justify-center my-5' >
+            <div className='flex justify-center my-4' >
                 <div className='w-70/100' >
                     <h4 className='flex mb-3' >Find The Cars of Your Choice</h4>
                     <div className='bg-gray-50 p-2 rounded-2xl' >
@@ -168,8 +201,12 @@ const CarData = () => {
                             <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon />Automatic</button>
                         </div>
                     </div>
+                    <span className='py-2 flex items-center gap-1' >View More Filters <FaAngleRight /></span>
                 </div>
             </div>
+
+            {/* Upcoming and Recently Launched Cars */}
+            <CarsByBudget title={"Upcoming and Recently Launched Cars"} />
 
         </div>
     )
