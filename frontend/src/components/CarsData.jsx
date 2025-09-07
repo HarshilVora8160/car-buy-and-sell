@@ -5,23 +5,26 @@ import { SiTransmission } from "react-icons/si";
 import { CiFilter } from "react-icons/ci";
 import { IoMdTime } from "react-icons/io";
 import { FaRegPenToSquare } from "react-icons/fa6";
-import CarSlider from './CarSlider';
-import TrendingCars from './TrendingCars';
+import CarSlider from './child-components/CarSlider';
+import TrendingCars from './child-components/TrendingCars';
 import CarsByBudget from './child-components/CarsbyBudget';
+import CarsLogo from './child-components/CarsLogo';
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import TimeToLeaveOutlinedIcon from '@mui/icons-material/TimeToLeaveOutlined';
 
 const CarData = () => {
 
     return (
-        <div className="relative">
-            <div className="px-10 my-3" >
+        <div className="">
+            <div className="px-10 my-3 relative" >
                 <img
                     src="https://imgd.aeplcdn.com/1920x1080/n/cw/ec/107719/range-rover-exterior-right-rear-three-quarter.jpeg?isig=0&q=80&q=80"
                     alt="Family with Car on Beach"
-                    className="w-full h-[50vh] object-cover rounded-xl"
+                    className="w-full h-[65vh] object-cover rounded-xl"
                 />
             </div>
 
-            <div className="flex justify-center ">
+            <div className="absolute inset-0 flex items-center justify-center z-10 top-[500px]">
                 <div className="bg-white shadow-md rounded-xl p-6 px-10 w-[60vw]">
                     <div className="flex items-center justify-between mb-4" >
                         <span className="text-2xl font-semibold">Find Your Right Car</span>
@@ -82,7 +85,7 @@ const CarData = () => {
                 </div>
             </div>
 
-            <div className='my-4 flex justify-center'>
+            <div className='my-4 flex justify-center pt-48'>
                 <div className='w-[60vw] bg-gray-50 p-3 rounded-2xl' >
                     <div className='flex items-center gap-1 mb-2' >
                         <IoMdTime size={20} />
@@ -133,96 +136,38 @@ const CarData = () => {
             {/* Cars by Budget component */}
             <CarsByBudget />
 
-            <div className='flex justify-center' >
-                <div className='w-55/100' >
-                    <h1 className='mb-3' >All Brands</h1>
-                    <div className='grid grid-cols-12 rounded-2xl' >
-                        <div className='col-span-2 flex justify-center items-center border border-black rounded-tl-2xl ' >
-                            <div className='p-3'>
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
+            {/* Cars logo component */}
+            <CarsLogo />
+
+            {/* Find The Cars Of Your Choice Component */}
+            <div className='flex justify-center my-5' >
+                <div className='w-70/100' >
+                    <h4 className='flex mb-3' >Find The Cars of Your Choice</h4>
+                    <div className='bg-gray-50 p-2 rounded-2xl' >
+                        <div className='flex items-center gap-2 p-2 py-3' >
+                            <span>Budget</span>
+                            <div className='flex items-center gap-3' >
+                                <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon /> Under 5 Lakh</button>
+                                <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon />Under 10 Lakh</button>
+                                <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon /> Under 15 Lakh</button>
+                                <div className='h-5 p-[0.5px] bg-gray-300' ></div>
+                            </div>
+                            <span>Body Type</span>
+                            <div className='flex items-center gap-3' >
+                                <button className="bg-white p-2 rounded border flex items-center gap-1"><TimeToLeaveOutlinedIcon />SUV</button>
+                                <button className="bg-white p-2 rounded border flex items-center gap-1"><TimeToLeaveOutlinedIcon />Hatchback</button>
+                                <button className="bg-white p-2 rounded border flex items-center gap-1"><TimeToLeaveOutlinedIcon />Sedan</button>
                             </div>
                         </div>
-
-                        <div className='col-span-2 flex justify-center border border-black' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThaXGkK-gl2qpYQNowhWvNb2YZHXwv4-E_3Q&s' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
+                        <div className='flex items-center gap-3 pb-3 p-2' >
+                            <span>Fuel Type & Others</span>
+                            <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon />Electiric</button>
+                            <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon />Hybrid</button>
+                            <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon />CNG</button>
+                            <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon />7 Seater</button>
+                            <button className="bg-white p-2 rounded border flex items-center gap-1"><LocalAtmIcon />Automatic</button>
                         </div>
-
-                        <div className='col-span-2  flex justify-center border border-black' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2  flex justify-center border border-black' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2  flex justify-center border border-black' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2  flex justify-center border border-black rounded-tr-2xl' >
-                            <div className=' p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2 flex justify-center items-center border border-black rounded-bl-2xl' >
-                            <div className='p-3'>
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2 flex justify-center border border-black' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2  flex justify-center border border-black' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2  flex justify-center border border-black' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2  flex justify-center border border-black' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
-                        <div className='col-span-2  flex justify-center border border-black rounded-br-2xl' >
-                            <div className='p-3' >
-                                <img className='h-20' src='https://digitalsynopsis.com/wp-content/uploads/2018/07/car-logos-bmw.jpg' alt='carLogo' />
-                                <span className='flex justify-center' >dsgf</span>
-                            </div>
-                        </div>
-
                     </div>
-
                 </div>
             </div>
 

@@ -17,9 +17,9 @@ const CarsByBudget = () => {
         <div>
             <div className='flex justify-center my-4' >
                 <div className='w-70/100' >
-                    <h3>Cars by Budget</h3>
+                    <h4>Cars by Budget</h4>
                     <div className='flex mt-4' >
-                        <div className='flex w-55/100 list-none gap-4 text-md' >
+                        <div className='flex w-55/100 list-none gap-5 text-md' >
                             <div>
                                 <li onClick={() => setCarBudget('')} className={`${carBudget === "" ? "text-green-700 mb-2" : ""}`} >Cars Under 10 Lakh</li>
                                 {carBudget === "" ? <div className='p-[2px] bg-green-700' ></div> : ""}
@@ -64,7 +64,7 @@ const CarsByBudget = () => {
                     </div>
 
                     <div className='mt-2' >
-                        <span className='flex text-sm mb-2 text-gray-500' >Showing Avg. Ex-Showroom Price, <span className='flex items-center gap-1 underline' > Select City <FaRegPenToSquare /></span></span>
+                        <span className='flex text-[12px] mb-2 text-gray-500 gap-1'  >Showing Avg. Ex-Showroom Price,<span className='flex items-center gap-1 underline text-gray-700' > Select City <FaRegPenToSquare /></span></span>
                         <span className='flex items-center gap-1' >All Cars Under 10 Lakh <FaAngleRight /></span>
                     </div>
                 </div>
